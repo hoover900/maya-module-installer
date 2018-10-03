@@ -212,7 +212,7 @@ proc string[] findModuleMatch(string $lines[])
 proc loadModuleExtended(string $moduleFile, string $path)
 {
     // get separator
-    string $separator = (`about -nt`) ? "/" : "\\";
+    string $separator = "/";
 
     // load module
     loadModule -load $moduleFile;
@@ -245,7 +245,7 @@ global proc installModule()
     string $path = dirname($melPath);
     
     // get separator
-    string $separator = (`about -nt`) ? "/" : "\\";
+    string $separator = "/";
 
     // find installed module
     string $modules[] = `moduleInfo -listModules`;
